@@ -192,23 +192,14 @@
                     </v-img>
                     </template>
                     <v-card>
-       <!-- <v-card-title class="text-h5 grey lighten-2">
-          Privacy Policy
-        </v-card-title>
-
-        <v-card-text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </v-card-text>-->
         <v-carousel
               cycle
               hide-delimiter-background
               hide-delimiters
               show-arrows-on-hover
+              :show-arrows="false"
             >
-              <v-carousel-item
-                v-for="(slide, i) in eco.images"
-                :key="i"
-              >
+              <v-carousel-item>
                 <v-sheet
                   height="100%"
                 >
@@ -221,7 +212,7 @@
                       
                     </div>
                      <v-img
-                      :src="slide.size_lg"
+                      :src="item.size_lg"
 
                       aspect-ratio="1"
                       class="grey lighten-2"
@@ -292,10 +283,33 @@
         <v-card-text>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </v-card-text>-->
-        <v-carousel :show-arrows="false">
-    <v-carousel-item
-      :src="'https://i.travelapi.com/hotels/16000000/15670000/15663900/15663894/b07c5c31_z.jpg'"
-    ></v-carousel-item>
+        <v-carousel :show-arrows="false" cycle
+              hide-delimiter-background
+              hide-delimiters
+              show-arrows-on-hover>
+    <v-carousel-item>
+      
+                <v-sheet
+                  height="100%"
+                >
+                  <v-row
+                    class="fill-height"
+                    align="center"
+                    justify="center"
+                  >
+                    <div class="text-h2">
+                      
+                    </div>
+                     <v-img
+                      :src="'https://i.travelapi.com/hotels/16000000/15670000/15663900/15663894/b07c5c31_z.jpg'"
+
+                      aspect-ratio="1"
+                      class="grey lighten-2"
+
+                    ></v-img>
+                  </v-row>
+                </v-sheet>
+    </v-carousel-item>
   </v-carousel>
 
         <v-divider></v-divider>
@@ -315,11 +329,23 @@
                     class="d-flex child-flex"
                     cols="4"
                   >
+                  <v-hover
+                    v-slot="{ hover }"
+                  >
+                  <v-card :elevation="hover ? 10 : 2"
+                      :class="{ 'on-hover': hover }">
+                    <v-dialog
+                      v-model="dialog"
+                      width="500"
+                    >
+                    <template v-slot:activator="{ on, attrs }">
                     <v-img
                       :src="'https://i.travelapi.com/hotels/16000000/15670000/15663900/15663894/9c2ca042_z.jpg'"
 
                       aspect-ratio="1"
                       class="grey lighten-2"
+                      v-bind="attrs"
+                      v-on="on"
                     >
                       <template v-slot:placeholder>
                         <v-row
@@ -334,6 +360,42 @@
                         </v-row>
                       </template>
                     </v-img>
+                    </template>
+                    <v-card>
+                      <v-carousel :show-arrows="false" cycle
+              hide-delimiter-background
+              hide-delimiters
+              show-arrows-on-hover>
+    <v-carousel-item>
+      
+                <v-sheet
+                  height="100%"
+                >
+                  <v-row
+                    class="fill-height"
+                    align="center"
+                    justify="center"
+                  >
+                    <div class="text-h2">
+                      
+                    </div>
+                     <v-img
+                      :src="'https://i.travelapi.com/hotels/16000000/15670000/15663900/15663894/9c2ca042_z.jpg'"
+
+                      aspect-ratio="1"
+                      class="grey lighten-2"
+
+                    ></v-img>
+                  </v-row>
+                </v-sheet>
+    ></v-carousel-item>
+  </v-carousel>
+
+        <v-divider></v-divider>
+      </v-card>
+    </v-dialog>
+    </v-card>
+                  </v-hover>
                   </v-col>
                 </v-row>
         </v-row>
@@ -346,9 +408,20 @@
                     class="d-flex child-flex"
                     cols="4"
                   >
+                  <v-hover
+                    v-slot="{ hover }"
+                  >
+                  <v-card :elevation="hover ? 10 : 2"
+                      :class="{ 'on-hover': hover }">
+                    <v-dialog
+                      v-model="dialog"
+                      width="500"
+                    >
+                    <template v-slot:activator="{ on, attrs }">
                     <v-img
                       :src="item.size_lg"
-
+                      v-bind="attrs"
+                      v-on="on"
                       aspect-ratio="1"
                       class="grey lighten-2"
                     >
@@ -365,6 +438,45 @@
                         </v-row>
                       </template>
                     </v-img>
+                    </template>
+                    <v-card>
+        <v-carousel
+              cycle
+              hide-delimiter-background
+              hide-delimiters
+              show-arrows-on-hover
+              :show-arrows="false"
+            >
+              <v-carousel-item>
+                <v-sheet
+                  height="100%"
+                >
+                  <v-row
+                    class="fill-height"
+                    align="center"
+                    justify="center"
+                  >
+                    <div class="text-h2">
+                      
+                    </div>
+                     <v-img
+                      :src="item.size_lg"
+
+                      aspect-ratio="1"
+                      class="grey lighten-2"
+
+                    ></v-img>
+                  </v-row>
+                </v-sheet>
+              </v-carousel-item>
+            </v-carousel>
+
+        <v-divider></v-divider>
+      </v-card>
+    </v-dialog>
+        </v-card>
+                  </v-hover>
+
                   </v-col>
                 </v-row>
         </v-row>
@@ -376,9 +488,20 @@
                     class="d-flex child-flex"
                     cols="4"
                   >
+                  <v-hover
+                    v-slot="{ hover }"
+                  >
+                  <v-card :elevation="hover ? 10 : 2"
+                      :class="{ 'on-hover': hover }">
+                    <v-dialog
+                      v-model="dialog"
+                      width="500"
+                    >
+                    <template v-slot:activator="{ on, attrs }">
                     <v-img
                       :src="'https://i.travelapi.com/hotels/16000000/15670000/15663900/15663894/e427601d_z.jpg'"
-
+                      v-bind="attrs"
+                      v-on="on"
                       aspect-ratio="1"
                       class="grey lighten-2"
                     >
@@ -395,6 +518,44 @@
                         </v-row>
                       </template>
                     </v-img>
+                    </template>
+                  <v-card>
+                      <v-carousel :show-arrows="false" cycle
+              hide-delimiter-background
+              hide-delimiters
+              show-arrows-on-hover>
+    <v-carousel-item>
+      
+                <v-sheet
+                  height="100%"
+                >
+                  <v-row
+                    class="fill-height"
+                    align="center"
+                    justify="center"
+                  >
+                    <div class="text-h2">
+                      
+                    </div>
+                     <v-img
+                      :src="'https://i.travelapi.com/hotels/16000000/15670000/15663900/15663894/e427601d_z.jpg'"
+
+                      aspect-ratio="1"
+                      class="grey lighten-2"
+
+                    ></v-img>
+                  </v-row>
+                </v-sheet>
+    ></v-carousel-item>
+  </v-carousel>
+
+        <v-divider></v-divider>
+      </v-card>
+    </v-dialog>
+    </v-card>
+                  </v-hover>
+
+
                   </v-col>
                 </v-row>
         </v-row>
@@ -405,10 +566,20 @@
                   <v-col
                     class="d-flex child-flex"
                     cols="4"
+                  ><v-hover
+                    v-slot="{ hover }"
                   >
+                  <v-card :elevation="hover ? 10 : 2"
+                      :class="{ 'on-hover': hover }">
+                    <v-dialog
+                      v-model="dialog"
+                      width="500"
+                    >
+                    <template v-slot:activator="{ on, attrs }">
                     <v-img
                       :src="'https://i.travelapi.com/hotels/16000000/15670000/15663900/15663894/b6fa2d73_z.jpg'"
-
+                      v-bind="attrs"
+                      v-on="on"
                       aspect-ratio="1"
                       class="grey lighten-2"
                     >
@@ -425,6 +596,42 @@
                         </v-row>
                       </template>
                     </v-img>
+                    </template>
+                  <v-card>
+                      <v-carousel :show-arrows="false" cycle
+              hide-delimiter-background
+              hide-delimiters
+              show-arrows-on-hover>
+    <v-carousel-item>
+      
+                <v-sheet
+                  height="100%"
+                >
+                  <v-row
+                    class="fill-height"
+                    align="center"
+                    justify="center"
+                  >
+                    <div class="text-h2">
+                      
+                    </div>
+                     <v-img
+                      :src="'https://i.travelapi.com/hotels/16000000/15670000/15663900/15663894/b6fa2d73_z.jpg'"
+
+                      aspect-ratio="1"
+                      class="grey lighten-2"
+
+                    ></v-img>
+                  </v-row>
+                </v-sheet>
+    ></v-carousel-item>
+  </v-carousel>
+
+        <v-divider></v-divider>
+      </v-card>
+    </v-dialog>
+    </v-card>
+                  </v-hover>
                   </v-col>
                 </v-row>
         </v-row>
@@ -437,9 +644,20 @@
                     class="d-flex child-flex"
                     cols="4"
                   >
+                  <v-hover
+                    v-slot="{ hover }"
+                  >
+                  <v-card :elevation="hover ? 10 : 2"
+                      :class="{ 'on-hover': hover }">
+                    <v-dialog
+                      v-model="dialog"
+                      width="500"
+                    >
+                    <template v-slot:activator="{ on, attrs }">
                     <v-img
                       :src="item.size_lg"
-
+                      v-bind="attrs"
+                      v-on="on"
                       aspect-ratio="1"
                       class="grey lighten-2"
                     >
@@ -456,6 +674,46 @@
                         </v-row>
                       </template>
                     </v-img>
+                    </template>
+                    <v-card>
+        <v-carousel
+              cycle
+              hide-delimiter-background
+              hide-delimiters
+              show-arrows-on-hover
+              :show-arrows="false"
+            >
+              <v-carousel-item>
+                <v-sheet
+                  height="100%"
+                >
+                  <v-row
+                    class="fill-height"
+                    align="center"
+                    justify="center"
+                  >
+                    <div class="text-h2">
+                      
+                    </div>
+                     <v-img
+                      :src="item.size_lg"
+
+                      aspect-ratio="1"
+                      class="grey lighten-2"
+
+                    ></v-img>
+                  </v-row>
+                </v-sheet>
+              </v-carousel-item>
+            </v-carousel>
+
+        <v-divider></v-divider>
+      </v-card>
+    </v-dialog>
+        </v-card>
+                  </v-hover>
+
+
                   </v-col>
                 </v-row>
         </v-row>
@@ -468,9 +726,20 @@
                     class="d-flex child-flex"
                     cols="4"
                   >
+                  <v-hover
+                    v-slot="{ hover }"
+                  >
+                  <v-card :elevation="hover ? 10 : 2"
+                      :class="{ 'on-hover': hover }">
+                    <v-dialog
+                      v-model="dialog"
+                      width="500"
+                    >
+                    <template v-slot:activator="{ on, attrs }">
                     <v-img
                       :src="item.size_lg"
-
+                      v-bind="attrs"
+                      v-on="on"
                       aspect-ratio="1"
                       class="grey lighten-2"
                     >
@@ -487,6 +756,44 @@
                         </v-row>
                       </template>
                     </v-img>
+                     </template>
+                    <v-card>
+        <v-carousel
+              cycle
+              hide-delimiter-background
+              hide-delimiters
+              show-arrows-on-hover
+              :show-arrows="false"
+            >
+              <v-carousel-item>
+                <v-sheet
+                  height="100%"
+                >
+                  <v-row
+                    class="fill-height"
+                    align="center"
+                    justify="center"
+                  >
+                    <div class="text-h2">
+                      
+                    </div>
+                     <v-img
+                      :src="item.size_lg"
+
+                      aspect-ratio="1"
+                      class="grey lighten-2"
+
+                    ></v-img>
+                  </v-row>
+                </v-sheet>
+              </v-carousel-item>
+            </v-carousel>
+
+        <v-divider></v-divider>
+      </v-card>
+    </v-dialog>
+        </v-card>
+                  </v-hover>
                   </v-col>
                 </v-row>
         </v-row>
@@ -499,9 +806,20 @@
                     class="d-flex child-flex"
                     cols="4"
                   >
+                  <v-hover
+                    v-slot="{ hover }"
+                  >
+                  <v-card :elevation="hover ? 10 : 2"
+                      :class="{ 'on-hover': hover }">
+                    <v-dialog
+                      v-model="dialog"
+                      width="500"
+                    >
+                    <template v-slot:activator="{ on, attrs }">
                     <v-img
                       :src="item.size_lg"
-
+                      v-bind="attrs"
+                      v-on="on"
                       aspect-ratio="1"
                       class="grey lighten-2"
                     >
@@ -518,6 +836,44 @@
                         </v-row>
                       </template>
                     </v-img>
+                    </template>
+                    <v-card>
+        <v-carousel
+              cycle
+              hide-delimiter-background
+              hide-delimiters
+              show-arrows-on-hover
+              :show-arrows="false"
+            >
+              <v-carousel-item>
+                <v-sheet
+                  height="100%"
+                >
+                  <v-row
+                    class="fill-height"
+                    align="center"
+                    justify="center"
+                  >
+                    <div class="text-h2">
+                      
+                    </div>
+                     <v-img
+                      :src="item.size_lg"
+
+                      aspect-ratio="1"
+                      class="grey lighten-2"
+
+                    ></v-img>
+                  </v-row>
+                </v-sheet>
+              </v-carousel-item>
+            </v-carousel>
+
+        <v-divider></v-divider>
+      </v-card>
+    </v-dialog>
+        </v-card>
+                  </v-hover>
                   </v-col>
                 </v-row>
         </v-row>
@@ -530,9 +886,20 @@
                     class="d-flex child-flex"
                     cols="4"
                   >
+                  <v-hover
+                    v-slot="{ hover }"
+                  >
+                  <v-card :elevation="hover ? 10 : 2"
+                      :class="{ 'on-hover': hover }">
+                    <v-dialog
+                      v-model="dialog"
+                      width="500"
+                    >
+                    <template v-slot:activator="{ on, attrs }">
                     <v-img
                       :src="item.size_lg"
-
+                      v-bind="attrs"
+                      v-on="on"
                       aspect-ratio="1"
                       class="grey lighten-2"
                     >
@@ -549,6 +916,44 @@
                         </v-row>
                       </template>
                     </v-img>
+                    </template>
+                    <v-card>
+        <v-carousel
+              cycle
+              hide-delimiter-background
+              hide-delimiters
+              show-arrows-on-hover
+              :show-arrows="false"
+            >
+              <v-carousel-item>
+                <v-sheet
+                  height="100%"
+                >
+                  <v-row
+                    class="fill-height"
+                    align="center"
+                    justify="center"
+                  >
+                    <div class="text-h2">
+                      
+                    </div>
+                     <v-img
+                      :src="item.size_lg"
+
+                      aspect-ratio="1"
+                      class="grey lighten-2"
+
+                    ></v-img>
+                  </v-row>
+                </v-sheet>
+              </v-carousel-item>
+            </v-carousel>
+
+        <v-divider></v-divider>
+      </v-card>
+    </v-dialog>
+        </v-card>
+                  </v-hover>
                   </v-col>
                 </v-row>
         </v-row>
@@ -561,9 +966,20 @@
                     class="d-flex child-flex"
                     cols="4"
                   >
+                  <v-hover
+                    v-slot="{ hover }"
+                  >
+                  <v-card :elevation="hover ? 10 : 2"
+                      :class="{ 'on-hover': hover }">
+                    <v-dialog
+                      v-model="dialog"
+                      width="500"
+                    >
+                    <template v-slot:activator="{ on, attrs }">
                     <v-img
                       :src="item.size_lg"
-
+                      v-bind="attrs"
+                      v-on="on"
                       aspect-ratio="1"
                       class="grey lighten-2"
                     >
@@ -580,6 +996,44 @@
                         </v-row>
                       </template>
                     </v-img>
+                    </template>
+                    <v-card>
+        <v-carousel
+              cycle
+              hide-delimiter-background
+              hide-delimiters
+              show-arrows-on-hover
+              :show-arrows="false"
+            >
+              <v-carousel-item>
+                <v-sheet
+                  height="100%"
+                >
+                  <v-row
+                    class="fill-height"
+                    align="center"
+                    justify="center"
+                  >
+                    <div class="text-h2">
+                      
+                    </div>
+                     <v-img
+                      :src="item.size_lg"
+
+                      aspect-ratio="1"
+                      class="grey lighten-2"
+
+                    ></v-img>
+                  </v-row>
+                </v-sheet>
+              </v-carousel-item>
+            </v-carousel>
+
+        <v-divider></v-divider>
+      </v-card>
+    </v-dialog>
+        </v-card>
+                  </v-hover>
                   </v-col>
                 </v-row>
         </v-row>
@@ -592,9 +1046,20 @@
                     class="d-flex child-flex"
                     cols="4"
                   >
+                  <v-hover
+                    v-slot="{ hover }"
+                  >
+                  <v-card :elevation="hover ? 10 : 2"
+                      :class="{ 'on-hover': hover }">
+                    <v-dialog
+                      v-model="dialog"
+                      width="500"
+                    >
+                    <template v-slot:activator="{ on, attrs }">
                     <v-img
                       :src="item.size_lg"
-
+                      v-bind="attrs"
+                      v-on="on"
                       aspect-ratio="1"
                       class="grey lighten-2"
                     >
@@ -611,6 +1076,44 @@
                         </v-row>
                       </template>
                     </v-img>
+                    </template>
+                    <v-card>
+        <v-carousel
+              cycle
+              hide-delimiter-background
+              hide-delimiters
+              show-arrows-on-hover
+              :show-arrows="false"
+            >
+              <v-carousel-item>
+                <v-sheet
+                  height="100%"
+                >
+                  <v-row
+                    class="fill-height"
+                    align="center"
+                    justify="center"
+                  >
+                    <div class="text-h2">
+                      
+                    </div>
+                     <v-img
+                      :src="item.size_lg"
+
+                      aspect-ratio="1"
+                      class="grey lighten-2"
+
+                    ></v-img>
+                  </v-row>
+                </v-sheet>
+              </v-carousel-item>
+            </v-carousel>
+
+        <v-divider></v-divider>
+      </v-card>
+    </v-dialog>
+        </v-card>
+                  </v-hover>
                   </v-col>
                 </v-row>
         </v-row>
@@ -623,9 +1126,20 @@
                     class="d-flex child-flex"
                     cols="4"
                   >
+                  <v-hover
+                    v-slot="{ hover }"
+                  >
+                  <v-card :elevation="hover ? 10 : 2"
+                      :class="{ 'on-hover': hover }">
+                    <v-dialog
+                      v-model="dialog"
+                      width="500"
+                    >
+                    <template v-slot:activator="{ on, attrs }">
                     <v-img
                       :src="item.size_lg"
-
+                      v-bind="attrs"
+                      v-on="on"
                       aspect-ratio="1"
                       class="grey lighten-2"
                     >
@@ -642,6 +1156,44 @@
                         </v-row>
                       </template>
                     </v-img>
+                    </template>
+                    <v-card>
+        <v-carousel
+              cycle
+              hide-delimiter-background
+              hide-delimiters
+              show-arrows-on-hover
+              :show-arrows="false"
+            >
+              <v-carousel-item>
+                <v-sheet
+                  height="100%"
+                >
+                  <v-row
+                    class="fill-height"
+                    align="center"
+                    justify="center"
+                  >
+                    <div class="text-h2">
+                      
+                    </div>
+                     <v-img
+                      :src="item.size_lg"
+
+                      aspect-ratio="1"
+                      class="grey lighten-2"
+
+                    ></v-img>
+                  </v-row>
+                </v-sheet>
+              </v-carousel-item>
+            </v-carousel>
+
+        <v-divider></v-divider>
+      </v-card>
+    </v-dialog>
+        </v-card>
+                  </v-hover>
                   </v-col>
                 </v-row>
         </v-row>
@@ -654,9 +1206,20 @@
                     class="d-flex child-flex"
                     cols="4"
                   >
+                  <v-hover
+                    v-slot="{ hover }"
+                  >
+                  <v-card :elevation="hover ? 10 : 2"
+                      :class="{ 'on-hover': hover }">
+                    <v-dialog
+                      v-model="dialog"
+                      width="500"
+                    >
+                    <template v-slot:activator="{ on, attrs }">
                     <v-img
                       :src="item.size_lg"
-
+                      v-bind="attrs"
+                      v-on="on"
                       aspect-ratio="1"
                       class="grey lighten-2"
                     >
@@ -673,6 +1236,44 @@
                         </v-row>
                       </template>
                     </v-img>
+                    </template>
+                    <v-card>
+        <v-carousel
+              cycle
+              hide-delimiter-background
+              hide-delimiters
+              show-arrows-on-hover
+              :show-arrows="false"
+            >
+              <v-carousel-item>
+                <v-sheet
+                  height="100%"
+                >
+                  <v-row
+                    class="fill-height"
+                    align="center"
+                    justify="center"
+                  >
+                    <div class="text-h2">
+                      
+                    </div>
+                     <v-img
+                      :src="item.size_lg"
+
+                      aspect-ratio="1"
+                      class="grey lighten-2"
+
+                    ></v-img>
+                  </v-row>
+                </v-sheet>
+              </v-carousel-item>
+            </v-carousel>
+
+        <v-divider></v-divider>
+      </v-card>
+    </v-dialog>
+        </v-card>
+                  </v-hover>
                   </v-col>
                 </v-row>
         </v-row>
@@ -685,9 +1286,20 @@
                     class="d-flex child-flex"
                     cols="4"
                   >
+                    <v-hover
+                    v-slot="{ hover }"
+                  >
+                  <v-card :elevation="hover ? 10 : 2"
+                      :class="{ 'on-hover': hover }">
+                    <v-dialog
+                      v-model="dialog"
+                      width="500"
+                    >
+                    <template v-slot:activator="{ on, attrs }">
                     <v-img
                       :src="item.size_lg"
-
+                      v-bind="attrs"
+                      v-on="on"
                       aspect-ratio="1"
                       class="grey lighten-2"
                     >
@@ -704,6 +1316,44 @@
                         </v-row>
                       </template>
                     </v-img>
+                    </template>
+                    <v-card>
+        <v-carousel
+              cycle
+              hide-delimiter-background
+              hide-delimiters
+              show-arrows-on-hover
+              :show-arrows="false"
+            >
+              <v-carousel-item>
+                <v-sheet
+                  height="100%"
+                >
+                  <v-row
+                    class="fill-height"
+                    align="center"
+                    justify="center"
+                  >
+                    <div class="text-h2">
+                      
+                    </div>
+                     <v-img
+                      :src="item.size_lg"
+
+                      aspect-ratio="1"
+                      class="grey lighten-2"
+
+                    ></v-img>
+                  </v-row>
+                </v-sheet>
+              </v-carousel-item>
+            </v-carousel>
+
+        <v-divider></v-divider>
+      </v-card>
+    </v-dialog>
+        </v-card>
+                  </v-hover>
                   </v-col>
                 </v-row>
         </v-row>
@@ -716,9 +1366,20 @@
                     class="d-flex child-flex"
                     cols="4"
                   >
+                    <v-hover
+                    v-slot="{ hover }"
+                  >
+                  <v-card :elevation="hover ? 10 : 2"
+                      :class="{ 'on-hover': hover }">
+                    <v-dialog
+                      v-model="dialog"
+                      width="500"
+                    >
+                    <template v-slot:activator="{ on, attrs }">
                     <v-img
                       :src="item.size_lg"
-
+                      v-bind="attrs"
+                      v-on="on"
                       aspect-ratio="1"
                       class="grey lighten-2"
                     >
@@ -735,6 +1396,44 @@
                         </v-row>
                       </template>
                     </v-img>
+                    </template>
+                    <v-card>
+        <v-carousel
+              cycle
+              hide-delimiter-background
+              hide-delimiters
+              show-arrows-on-hover
+              :show-arrows="false"
+            >
+              <v-carousel-item>
+                <v-sheet
+                  height="100%"
+                >
+                  <v-row
+                    class="fill-height"
+                    align="center"
+                    justify="center"
+                  >
+                    <div class="text-h2">
+                      
+                    </div>
+                     <v-img
+                      :src="item.size_lg"
+
+                      aspect-ratio="1"
+                      class="grey lighten-2"
+
+                    ></v-img>
+                  </v-row>
+                </v-sheet>
+              </v-carousel-item>
+            </v-carousel>
+
+        <v-divider></v-divider>
+      </v-card>
+    </v-dialog>
+        </v-card>
+                  </v-hover>
                   </v-col>
                 </v-row>
         </v-row>
@@ -747,9 +1446,20 @@
                     class="d-flex child-flex"
                     cols="4"
                   >
+                    <v-hover
+                    v-slot="{ hover }"
+                  >
+                  <v-card :elevation="hover ? 10 : 2"
+                      :class="{ 'on-hover': hover }">
+                    <v-dialog
+                      v-model="dialog"
+                      width="500"
+                    >
+                    <template v-slot:activator="{ on, attrs }">
                     <v-img
                       :src="item.size_lg"
-
+                      v-bind="attrs"
+                      v-on="on"
                       aspect-ratio="1"
                       class="grey lighten-2"
                     >
@@ -766,6 +1476,44 @@
                         </v-row>
                       </template>
                     </v-img>
+                    </template>
+                    <v-card>
+        <v-carousel
+              cycle
+              hide-delimiter-background
+              hide-delimiters
+              show-arrows-on-hover
+              :show-arrows="false"
+            >
+              <v-carousel-item>
+                <v-sheet
+                  height="100%"
+                >
+                  <v-row
+                    class="fill-height"
+                    align="center"
+                    justify="center"
+                  >
+                    <div class="text-h2">
+                      
+                    </div>
+                     <v-img
+                      :src="item.size_lg"
+
+                      aspect-ratio="1"
+                      class="grey lighten-2"
+
+                    ></v-img>
+                  </v-row>
+                </v-sheet>
+              </v-carousel-item>
+            </v-carousel>
+
+        <v-divider></v-divider>
+      </v-card>
+    </v-dialog>
+        </v-card>
+                  </v-hover>
                   </v-col>
                 </v-row>
         </v-row>
@@ -778,9 +1526,20 @@
                     class="d-flex child-flex"
                     cols="4"
                   >
+                    <v-hover
+                    v-slot="{ hover }"
+                  >
+                  <v-card :elevation="hover ? 10 : 2"
+                      :class="{ 'on-hover': hover }">
+                    <v-dialog
+                      v-model="dialog"
+                      width="500"
+                    >
+                    <template v-slot:activator="{ on, attrs }">
                     <v-img
                       :src="item.size_lg"
-
+                      v-bind="attrs"
+                      v-on="on"
                       aspect-ratio="1"
                       class="grey lighten-2"
                     >
@@ -797,6 +1556,44 @@
                         </v-row>
                       </template>
                     </v-img>
+                    </template>
+                    <v-card>
+        <v-carousel
+              cycle
+              hide-delimiter-background
+              hide-delimiters
+              show-arrows-on-hover
+              :show-arrows="false"
+            >
+              <v-carousel-item>
+                <v-sheet
+                  height="100%"
+                >
+                  <v-row
+                    class="fill-height"
+                    align="center"
+                    justify="center"
+                  >
+                    <div class="text-h2">
+                      
+                    </div>
+                     <v-img
+                      :src="item.size_lg"
+
+                      aspect-ratio="1"
+                      class="grey lighten-2"
+
+                    ></v-img>
+                  </v-row>
+                </v-sheet>
+              </v-carousel-item>
+            </v-carousel>
+
+        <v-divider></v-divider>
+      </v-card>
+    </v-dialog>
+        </v-card>
+                  </v-hover>
                   </v-col>
                 </v-row>
         </v-row>
@@ -809,9 +1606,20 @@
                     class="d-flex child-flex"
                     cols="4"
                   >
+                    <v-hover
+                    v-slot="{ hover }"
+                  >
+                  <v-card :elevation="hover ? 10 : 2"
+                      :class="{ 'on-hover': hover }">
+                    <v-dialog
+                      v-model="dialog"
+                      width="500"
+                    >
+                    <template v-slot:activator="{ on, attrs }">
                     <v-img
                       :src="item.size_lg"
-
+                      v-bind="attrs"
+                      v-on="on"
                       aspect-ratio="1"
                       class="grey lighten-2"
                     >
@@ -828,6 +1636,44 @@
                         </v-row>
                       </template>
                     </v-img>
+                    </template>
+                    <v-card>
+        <v-carousel
+              cycle
+              hide-delimiter-background
+              hide-delimiters
+              show-arrows-on-hover
+              :show-arrows="false"
+            >
+              <v-carousel-item>
+                <v-sheet
+                  height="100%"
+                >
+                  <v-row
+                    class="fill-height"
+                    align="center"
+                    justify="center"
+                  >
+                    <div class="text-h2">
+                      
+                    </div>
+                     <v-img
+                      :src="item.size_lg"
+
+                      aspect-ratio="1"
+                      class="grey lighten-2"
+
+                    ></v-img>
+                  </v-row>
+                </v-sheet>
+              </v-carousel-item>
+            </v-carousel>
+
+        <v-divider></v-divider>
+      </v-card>
+    </v-dialog>
+        </v-card>
+                  </v-hover>
                   </v-col>
                 </v-row>
         </v-row>
@@ -840,9 +1686,20 @@
                     class="d-flex child-flex"
                     cols="4"
                   >
+                    <v-hover
+                    v-slot="{ hover }"
+                  >
+                  <v-card :elevation="hover ? 10 : 2"
+                      :class="{ 'on-hover': hover }">
+                    <v-dialog
+                      v-model="dialog"
+                      width="500"
+                    >
+                    <template v-slot:activator="{ on, attrs }">
                     <v-img
                       :src="item.size_lg"
-
+                      v-bind="attrs"
+                      v-on="on"
                       aspect-ratio="1"
                       class="grey lighten-2"
                     >
@@ -859,6 +1716,44 @@
                         </v-row>
                       </template>
                     </v-img>
+                    </template>
+                    <v-card>
+        <v-carousel
+              cycle
+              hide-delimiter-background
+              hide-delimiters
+              show-arrows-on-hover
+              :show-arrows="false"
+            >
+              <v-carousel-item>
+                <v-sheet
+                  height="100%"
+                >
+                  <v-row
+                    class="fill-height"
+                    align="center"
+                    justify="center"
+                  >
+                    <div class="text-h2">
+                      
+                    </div>
+                     <v-img
+                      :src="item.size_lg"
+
+                      aspect-ratio="1"
+                      class="grey lighten-2"
+
+                    ></v-img>
+                  </v-row>
+                </v-sheet>
+              </v-carousel-item>
+            </v-carousel>
+
+        <v-divider></v-divider>
+      </v-card>
+    </v-dialog>
+        </v-card>
+                  </v-hover>
                   </v-col>
                 </v-row>
         </v-row>

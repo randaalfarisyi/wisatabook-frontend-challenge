@@ -2310,7 +2310,11 @@ import axios from 'axios'
   .v-application .mr-15 {
     margin-right: 80px !important;
     margin-left: 12px !important;
-}
+  }
+  .v-tab{
+    font-size: 12px !important;
+    padding: 0 5px !important;
+  }
   
 }
 

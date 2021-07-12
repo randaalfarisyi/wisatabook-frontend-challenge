@@ -8,11 +8,11 @@
       <v-col class="mb-4">
         <div class="tengah">
           <v-row>
-            <div>
-        <v-col>
+            <div class="stylePic">
+        <v-col class="mr-9 ml-10 flex-sm-right">
         <v-img
           :src="'https://i.travelapi.com/hotels/16000000/15670000/15663900/15663894/b07c5c31_b.jpg'"
-          class="rounded-circle grey lighten-2 mr-10 ml-10"
+          class="rounded-circle grey lighten-2"
           aspect-ratio="1"
           :height="200"
           :width="200"
@@ -35,7 +35,7 @@
         </div>
         <div>
             <v-col v-for="item in ecosystem.data"
-                :key="item">
+                :key="item" class="ml-10 mt-3">
               <h3>{{item.name}}</h3>
               <v-icon  class="mr-2 mb-5 mt-5" color="yellow darken-2">mdi-star</v-icon>
               <v-icon  class="mr-2 mb-5 mt-5" color="yellow darken-2">mdi-star</v-icon>
@@ -111,6 +111,7 @@
       center-active
       centered
       v-if="!$vuetify.theme.dark"
+      class="hidden-xs-only"
       
     >
       <v-tab><v-icon  class="mr-2 mb-5 mt-5">mdi-apps-box</v-icon>Photos</v-tab>
@@ -120,6 +121,7 @@
       center-active
       centered
       v-if="$vuetify.theme.dark"
+      class="hidden-xs-only"
       
     >
       <v-tab><v-icon  class="mr-2 mb-5 mt-5">mdi-apps-box</v-icon>Photos</v-tab>
@@ -2276,4 +2278,30 @@ import axios from 'axios'
 .v-application .elevation-7 {
     box-shadow: none !important;
 }
+
+@media (max-width: 600px){
+  .v-application .rounded-circle {
+    border-radius: 50% !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  h3{
+    font-size: 17px !important;
+  }
+  p{
+    font-size: 13px !important;
+  }
+  span{
+    font-size: 14px !important;
+  }
+  span.v-btn__content {
+    font-size: 12px !important
+  }
+  .v-application--is-ltr .v-responsive__sizer ~ .v-responsive__content {
+    margin-left: 30px !important;
+    margin-right: 30px !important;
+  }
+  
+}
+
 </style>

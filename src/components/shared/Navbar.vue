@@ -20,7 +20,7 @@
       <v-spacer></v-spacer>
       <v-icon v-if="!$vuetify.theme.dark" class="mr-4">mdi-theme-light-dark</v-icon>
       <v-icon v-if="$vuetify.theme.dark" class="mr-4" color="blue">mdi-theme-light-dark</v-icon>
-      <v-switch class="pt-5 mr-10"
+      <v-switch class="pt-5 mr-1"
         v-model="$vuetify.theme.dark"
         inset
             >

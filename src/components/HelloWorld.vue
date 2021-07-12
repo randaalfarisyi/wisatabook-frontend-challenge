@@ -9,7 +9,7 @@
         <div class="tengah">
           <v-row>
             <div class="stylePic">
-        <v-col class="mr-9 ml-10 flex-sm-right">
+        <v-col class="mr-15 flex-sm-right">
         <v-img
           :src="'https://i.travelapi.com/hotels/16000000/15670000/15663900/15663894/b07c5c31_b.jpg'"
           class="rounded-circle grey lighten-2"
@@ -35,7 +35,7 @@
         </div>
         <div>
             <v-col v-for="item in ecosystem.data"
-                :key="item" class="ml-10 mt-3">
+                :key="item" class="mt-3">
               <h3>{{item.name}}</h3>
               <v-icon  class="mr-2 mb-5 mt-5" color="yellow darken-2">mdi-star</v-icon>
               <v-icon  class="mr-2 mb-5 mt-5" color="yellow darken-2">mdi-star</v-icon>
@@ -2290,7 +2290,6 @@ import axios from 'axios'
   }
   p{
     font-size: 13px !important;
-    padding-right: 90px;
   }
   span{
     font-size: 14px !important;
@@ -2302,6 +2301,16 @@ import axios from 'axios'
     margin-left: 30px !important;
     margin-right: 30px !important;
   }
+  .v-application .mt-3 {
+    margin-top: 5px !important;
+    margin-left: 12px !important;
+    margin-right: 12px !important;
+  
+  }
+  .v-application .mr-15 {
+    margin-right: 80px !important;
+    margin-left: 12px !important;
+}
   
 }
 

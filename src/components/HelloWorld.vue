@@ -2290,6 +2290,7 @@ import axios from 'axios'
   }
   p{
     font-size: 13px !important;
+    padding-right: 90px;
   }
   span{
     font-size: 14px !important;
